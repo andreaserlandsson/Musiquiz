@@ -1,4 +1,4 @@
-all: update install frontend
+all: install frontend 
 
 update:
 	git reset --hard
@@ -8,4 +8,13 @@ install:
 	npm install
 
 frontend:
+	echo "building frontend"
 	cd frontend && make
+	echo "finished building frontend"
+run:
+	node index.js
+
+start:
+	cd frontend && make
+	cd ..
+	node index.js
